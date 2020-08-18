@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { IEvent } from '../../../../shared/models';
+import { addEvent } from '../../../../store/event/event.actions';
 
 @Component({
   selector: 'app-add-event',
@@ -9,7 +12,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddEventComponent implements OnInit {
   addEventForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private store: Store<IEvent[]>
+  ) {}
 
   ngOnInit(): void {
     this.buildForm();
@@ -21,5 +27,11 @@ export class AddEventComponent implements OnInit {
       address: ['', Validators.required],
       date: ['', Validators.required],
     });
+  }
+
+  addEvent(): void {
+    if (this.addEventForm.valid) {
+      this.store.dispatch(addEvent({ event: this.addEventForm.value }));
+    }
   }
 }

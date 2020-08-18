@@ -6,7 +6,7 @@
   </div>
   <div class="actions">
     <div class="actions__title">Add Event</div>
-    <form [formGroup]="addEventForm" class="form">
+    <form [formGroup]="addEventForm" (ngSubmit)="addEvent()" class="form">
       <label class="form__label">
         <div>
           <span>Event name</span>
@@ -34,7 +34,7 @@
         </div>
         <input formControlName="date" class="form__input">
       </label>
-      <button
+      <button type="submit"
         [disabled]="addEventForm.invalid"
         [ngClass]="addEventForm.invalid ? 'form__submit--disabled' : ''"
         class="form__submit">Add</button>

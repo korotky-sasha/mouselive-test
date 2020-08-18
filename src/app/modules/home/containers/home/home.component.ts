@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IEvent } from '../../../../shared/models';
+import { Store } from '@ngrx/store';
+import { IState } from '../../../../shared/models';
+import { selectEvents } from '../../../../store/event/event.selector';
 
 @Component({
   selector: 'app-home',
@@ -7,22 +9,9 @@ import { IEvent } from '../../../../shared/models';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  events: IEvent[] = [
-    {
-      id: '1',
-      name: 'Event 1',
-      address: 'USA, NY',
-      date: '13 april',
-    },
-    {
-      id: '2',
-      name: 'Event 2',
-      address: 'USA, NY',
-      date: '14 april',
-    },
-  ];
+  events$ = this.store.select(selectEvents);
 
-  constructor() {}
+  constructor(private store: Store<IState>) {}
 
   ngOnInit(): void {}
 }
