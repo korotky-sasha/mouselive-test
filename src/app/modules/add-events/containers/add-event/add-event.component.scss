@@ -1,0 +1,106 @@
+.row {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.back-arrow {
+  position: relative;
+  margin-left: 76px;
+  padding-right: 11px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  &__rectangle {
+    position: absolute;
+    background: #000000;
+    &--1 {
+      width: 40px;
+      height: 5px;
+      top: calc(50% - 2.5px);
+    }
+    &--2 {
+      width: 17.07px;
+      height: 5px;
+      top: calc(50% + 2px);
+      transform: rotate(38.69deg);
+    }
+    &--3 {
+      width: 17.16px;
+      height: 5px;
+      top: 20%;
+      transform: rotate(133.74deg);
+    }
+  }
+}
+.actions {
+  &__title {
+    padding-bottom: 43px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+  }
+}
+.preview-col {
+  padding-left: 100px;
+  &__title {
+    padding-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  }
+}
+.form {
+  &__label {
+    min-width: 314px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  }
+  &__input {
+    height: 29px;
+    border: none;
+    background: #C4C4C4;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+  }
+  &__error {
+    padding-left: 20px;
+    color: #FF0000;
+  }
+  &__submit {
+    margin-top: 22px;
+    width: 183px;
+    height: 41px;
+    border: none;
+    cursor: pointer;
+    background: #C4C4C4;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    &--disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+  }
+}

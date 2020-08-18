@@ -1,4 +1,8 @@
 <div class="toolbar">
-  <span>Logo</span>
-  <a routerLink="/">Home</a>
+  <span class="toolbar__item toolbar__item--logo">Logo</span>
+  <a
+    routerLink="/"
+    routerLinkActive="toolbar__item--active"
+    [routerLinkActiveOptions]="{exact: true}"
+    class="toolbar__item">Home</a>
 </div>

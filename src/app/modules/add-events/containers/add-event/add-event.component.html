@@ -1,1 +1,47 @@
-<p>add-event works!</p>
+<div class="row">
+  <div routerLink="/" class="back-arrow">
+    <div class="back-arrow__rectangle back-arrow__rectangle--1"></div>
+    <div class="back-arrow__rectangle back-arrow__rectangle--2"></div>
+    <div class="back-arrow__rectangle back-arrow__rectangle--3"></div>
+  </div>
+  <div class="actions">
+    <div class="actions__title">Add Event</div>
+    <form [formGroup]="addEventForm" class="form">
+      <label class="form__label">
+        <div>
+          <span>Event name</span>
+          <span
+            *ngIf="addEventForm.controls.name.invalid && (addEventForm.controls.name.dirty || addEventForm.controls.name.touched)"
+            class="form__error">This field is required</span>
+        </div>
+        <input formControlName="name" class="form__input">
+      </label>
+      <label class="form__label">
+        <div>
+          <span>Address</span>
+          <span
+            *ngIf="addEventForm.controls.address.invalid && (addEventForm.controls.address.dirty || addEventForm.controls.address.touched)"
+            class="form__error">This field is required</span>
+        </div>
+        <input formControlName="address" class="form__input">
+      </label>
+      <label class="form__label">
+        <div>
+          <span>Date</span>
+          <span
+            *ngIf="addEventForm.controls.date.invalid && (addEventForm.controls.date.dirty || addEventForm.controls.date.touched)"
+            class="form__error">This field is required</span>
+        </div>
+        <input formControlName="date" class="form__input">
+      </label>
+      <button
+        [disabled]="addEventForm.invalid"
+        [ngClass]="addEventForm.invalid ? 'form__submit--disabled' : ''"
+        class="form__submit">Add</button>
+    </form>
+  </div>
+  <div class="preview-col">
+    <div class="preview-col__title">Preview</div>
+    <app-event-preview [event]="addEventForm.value"></app-event-preview>
+  </div>
+</div>

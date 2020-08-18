@@ -1,0 +1,23 @@
+.toolbar {
+  margin: 25px 41px 0 65px;
+  padding: 7px 0 8px 15px;
+  background: #C4C4C4;
+  &__item {
+    padding-right: 47px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration: none;
+    color: #707070;
+    &--logo {
+      color: #D8034F;
+      font-style: italic;
+      font-weight: 900;
+    }
+    &--active {
+      color: #000000;
+    }
+  }
+}

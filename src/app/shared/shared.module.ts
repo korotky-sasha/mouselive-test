@@ -7,6 +7,6 @@ import { EventPreviewComponent } from './components/event-preview/event-preview.
 @NgModule({
   declarations: [ToolbarComponent, EventPreviewComponent],
   imports: [CommonModule, RouterModule],
-  exports: [ToolbarComponent],
+  exports: [ToolbarComponent, EventPreviewComponent],
 })
 export class SharedModule {}

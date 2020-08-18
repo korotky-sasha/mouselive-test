@@ -1,6 +1,6 @@
-export interface Event {
+export interface IEvent {
   id: string;
   name: string;
   address: string;
-  date: Date;
+  date: string;
 }

@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
       logOnly: environment.production,
     }),
     SharedModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

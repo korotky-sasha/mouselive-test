@@ -1,1 +1,7 @@
-<p>home works!</p>
+<h1 class="title">Home</h1>
+<div class="events-container">
+  <ng-container *ngFor="let event of events">
+    <app-event-preview [event]="event"></app-event-preview>
+  </ng-container>
+  <div class="add-event" routerLink="add-event">+<br>Add more</div>
+</div>
