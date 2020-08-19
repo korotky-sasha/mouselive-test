@@ -11,3 +11,8 @@ export const addEvent = createAction(
   '[AddEvent Component] Add Event',
   props<{ event: IEvent }>()
 );
+
+export const addEventSuccess = createAction(
+  '[Events API] Event Uploading Success',
+  props<{ event: IEvent }>()
+);

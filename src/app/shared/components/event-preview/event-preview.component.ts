@@ -8,7 +8,7 @@ import { IEvent } from '../../models';
 })
 export class EventPreviewComponent implements OnInit {
   @Input() event: IEvent = {
-    id: '1',
+    id: 1,
     name: 'Name',
     address: 'Address',
     date: 'Date',

@@ -4,13 +4,13 @@ import { IEvent } from '../../shared/models';
 
 export const initialState: IEvent[] = [
   {
-    id: '1',
+    id: 1,
     name: 'Event 1',
     address: 'USA, NY',
     date: '13 april',
   },
   {
-    id: '2',
+    id: 2,
     name: 'Event 2',
     address: 'USA, NY',
     date: '14 april',
@@ -19,10 +19,7 @@ export const initialState: IEvent[] = [
 
 const eventReducer = createReducer(
   initialState,
-  on(EventActions.setEvents, (state, { events }) => {
-    return events.map((value) => Object.assign(value));
-  }),
-  on(EventActions.addEvent, (state, { event }) => {
+  on(EventActions.addEventSuccess, (state, { event }) => {
     const newEvents = state.map((value) => value);
     newEvents.push(event);
     return newEvents;
